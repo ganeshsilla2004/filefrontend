@@ -35,15 +35,15 @@ function App() {
     formData.append("file", selectedFile);
 
     try {
-      // First, check if authentication is working
-      await axios.get('http://localhost:5001/api/auth-check', {
+      // Updated API endpoint for auth check
+      await axios.get('https://ganeshsilla.software/api/auth-check', {
         headers: {
           Authorization: `Bearer ${auth.user?.id_token}`,
         }
       });
 
-      // Then proceed with upload
-      const res = await axios.post('http://localhost:5001/api/upload', formData, {
+      // Updated API endpoint for upload
+      const res = await axios.post('https://ganeshsilla.software/api/upload', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
           Authorization: `Bearer ${auth.user?.id_token}`,
@@ -68,7 +68,7 @@ function App() {
     
     setLoading(true);
     try {
-      const res = await axios.get('http://localhost:5001/api/my-files', {
+      const res = await axios.get('https://ganeshsilla.software/api/my-files', {
         headers: {
           Authorization: `Bearer ${auth.user?.id_token}`,
         }
@@ -95,7 +95,7 @@ function App() {
     setError(null);
 
     try {
-      await axios.delete(`http://localhost:5001/api/files/${fileId}`, {
+      await axios.delete(`https://ganeshsilla.software/api/files/${fileId}`, {
         headers: {
           Authorization: `Bearer ${auth.user?.id_token}`,
         }
