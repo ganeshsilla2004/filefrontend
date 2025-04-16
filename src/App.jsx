@@ -131,7 +131,7 @@ function App() {
 
   const signOutRedirect = () => {
     const clientId = "2lokd7f8a5tetaeamk775g32ha";
-    const logoutUri = "https://main.dlicpw3zl70pz.amplifyapp.com";
+    const logoutUri = "https://main.dlicpw3zl70pz.amplifyapp.com/";  // Added trailing slash
     const cognitoDomain = "https://us-east-1klktfctyz.auth.us-east-1.amazoncognito.com";
     window.location.href = `${cognitoDomain}/logout?client_id=${clientId}&response_type=code&redirect_uri=${encodeURIComponent(logoutUri)}`;
   };
